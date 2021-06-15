@@ -1,0 +1,70 @@
+/* Image Background Set up */
+body {
+    background-image: url("../images/paper-balls.jpg");
+    background-repeat:repeat;
+    background-size:150%;
+}
+
+/* Form background */
+form {
+    background-color: rgba(100, 147, 179, 0.377);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.card-body {
+    background-color: #FFFFFF90 !important;
+    border-radius: 30px;
+    padding: 10px;
+    border: none;
+}
+
+input {
+    border-radius: 20px !important;
+    border: none !important;
+}
+
+.form-control{
+    border-radius: 20px !important;
+    border: none !important;
+}
+
+.form-select{
+    border-radius: 20px !important;
+    border: none !important;
+}
+
+/* formating ALL buttons */
+.btn {
+    border-radius: 20px !important;
+    border-color: none;
+    font-weight: bold;
+    font-family: cambria;
+}
+
+
+
+/* Task list text */
+h1 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style:inherit;
+    font-stretch: extra-expanded !important;
+    font-weight:bold !important;   
+
+}
+
+label{
+    font-weight: bolder;
+}
+
+/*Display Cards */
+
+.fa-trash {
+    color: red;
+    font-size:larger
+}
+
+.btn-trash:hover {
+    border: 1px solid red;
+}
+
