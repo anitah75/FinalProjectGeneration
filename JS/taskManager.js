@@ -16,7 +16,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status)  => 
         <div class="align-items-baseline justify-content-between">
           <h6 class="card-subtitle my-3 mt-4">Status: <span class="strong">${status}</span></h6>
           <div class="container">
-            <div class="row row-cols-1 row-cols-md-4 justify-content-center">
+            <div class="row  row-cols-4 g-4 ">
               <button class="col-4 btn btn-outline-success done-button ${visibility} mx-5"><i class="fa fa-thumbs-o-up "></i>Done</button> 
               <button class="col-4 btn btn-outline-danger mx-5"><i class="fa fa-trash"></i>Delete</button>
             </div>

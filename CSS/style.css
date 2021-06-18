@@ -62,15 +62,6 @@ label{
 
 /*Display Cards */
 
-/*.fa-trash {
-    color: red;
-    font-size:larger
-}
-
-.btn-trash:hover {
-    border: 1px solid red;
-}*/
-
 .cardstyle{
     background-color: rgba(55, 56, 128, 0.205)!important;
     border-radius: 20px;
@@ -97,5 +88,17 @@ h6{
     border-radius: 20px;
     padding: 10px;
     border:none;
+    
+}
+
+.btn-outline-success{
+    height: min-content;
+    width: min-content;
+      
+}
+
+.btn-outline-danger{
+    height: min-content;
+    width: min-content;
     
 }
