@@ -1,9 +1,8 @@
-//Reset option with "New Task" button
-const NewTask = document.querySelector("#newTask");
+const newTaskButton = document.querySelector("#newTask");
 
-NewTask.addEventListener('click', newTask);
+newTaskButton.addEventListener('click', newTaskToggler);
 
-function newTask(){
+function newTaskToggler(){
     document.querySelector("#taskForm").reset();
     validationName.style.display = "none"
     validationDescription.style.display = "none";
@@ -17,14 +16,15 @@ function newTask(){
     validationStatus.innerHTML = "none";
 };
 
-//Validation of the form
-
 const taskManager = new TaskManager(0);
 // Testing the TaskManager class
 // taskManager.addTask('Take out the trash', 'Take out the trash to the front of the house', 'Nick', '11/06/2021', 'In Progress');
 // taskManager.addTask('Cooking', 'Dinner for tonight', 'Antonio', '11/06/2021', 'In Progress');
 // console.log(taskManager.currentId, taskManager.tasks);
 
+// Display older tasks if there are any
+taskManager.load();
+taskManager.render();
 
 let taskName = document.querySelector("#taskName");
 //console.log("new task: " + taskName.value);
@@ -135,7 +135,7 @@ dueDate.addEventListener("input",dateValidfunc);
 // status validation function
 const statusValidFunction = () => {
     statusOk = false;
-    if(status.value !== "Select") {
+    if(status.value !== "select a status") {
         validationStatus.style.display = "block";
         validationStatus.innerHTML = "Looks good!";
         validationStatus.style.color = "green";
@@ -194,8 +194,8 @@ const validFormFieldInput = (event) => {
         validationDueDate.style.display = "none";
         dueDate.style.borderColor = "#ced4da";
 
-        // reset status
-        status.value = "Select";
+        // reset satus
+        status.value = "select a status";
         validationStatus.style.display = "none";
         status.style.borderColor = "#ced4da";
 
@@ -203,11 +203,13 @@ const validFormFieldInput = (event) => {
         
     } 
     taskManager.render();
+
+    //Saving the data in the localSorage
+    taskManager.save();
 };
 
 
 taskForm.addEventListener("submit", validFormFieldInput);
-
 
 //test to create a task HTML 
 // let taskHtml = createTaskHtml("Cooking","dinner for tonight", "Ana", "11/06/2021", "Pending");
@@ -226,6 +228,17 @@ taskList.addEventListener("click", (event) =>{
         task.status = "Done";
 
         taskManager.render();
-        //event.target.style.display = "none";
+        //Saving the data in the localSorage
+        taskManager.save();
     }   
+
+    if(event.target.classList.contains("delete-button")){
+        const parentTask = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;    
+        const taskId = Number(parentTask.dataset.taskId);
+        taskManager.deleteTask(taskId);
+
+        taskManager.render();
+        //Saving the data in the localSorage
+        taskManager.save();
+    }
 });
