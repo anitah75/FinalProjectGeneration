@@ -2,13 +2,14 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status)  => 
   let visibility;
   if(status === "Done"){
     visibility = "invisible";
+    
   }else{
     visibility = "visible";
   }
   const html = `
   <li class="list-group-item list-border" data-task-id="${id}">
-  <div class="card cardstyle">
-    <div class="card-body">
+    <a href="#" contenteditable>
+      <div class="card-body">
       <h3 class="card-title">${name}</h3>
       <p class="card-text">${description}</p>
       <h6 class="card-subtitle mb-2 mt-2">Assigned To: <span class="h5 strong">${assignedTo}</span></h6>
@@ -17,13 +18,13 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status)  => 
         <h6 class="card-subtitle my-3 mt-4">Status: <span class="strong">${status}</span></h6>
         <div class="container">
           <div class="row row-cols-1 row-cols-md-4 justify-content-center">
-            <button class="col-4 btn btn-outline-success done-button ${visibility} mx-5"><i class="fa fa-thumbs-o-up "></i>Done</button> 
-            <button class="col-4 btn btn-outline-danger mx-5 delete-button"><i class="fa fa-trash"></i>Delete</button>
+            <button class="col-4 btn btn-outline-success done-button ${visibility} mx-5"><i class="fa fa-thumbs-o-up "></i> Done</button> 
+            <button class="col-4 btn btn-outline-danger mx-5 delete-button mt-1"><i class="fa fa-trash"></i> Delete</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </a>
 </li>`;
 
 return html;
@@ -112,3 +113,5 @@ class TaskManager {
     }
 
 };
+  
+ 

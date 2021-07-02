@@ -1,0 +1,172 @@
+/* Image Background Set up */
+body {
+    background-image: url("../images/paper-balls.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Form background */
+form {
+    background-color: rgba(55, 56, 128, 0.205);
+    padding: 10px;
+    
+}
+/*---changes of the form to display the cards--- */
+
+*{
+    margin:0;
+    padding:0;
+  }
+  ul,li{
+    list-style:none;
+  }
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  ul li a{
+    text-decoration:none;
+    color:#000;
+    background:rgba(55, 56, 128, 0.205);
+    display:block;
+    height:20em;
+    width:22em;
+    padding:1em;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    transition: transform .15s linear;
+    /*transform: rotate(-6deg); */
+  }
+  
+  ul li:nth-child(even) a{
+    /*transform:rotate(4deg);*/
+    position:relative;
+    top:5px;
+    background:rgba(55, 56, 128, 0.205);
+  }
+  ul li:nth-child(3n) a{
+    /*transform:rotate(-3deg); */
+    position:relative;
+    top:5px;
+    background:rgba(55, 56, 128, 0.205);
+  }
+  ul li:nth-child(5n) a{
+   /* transform:rotate(5deg); */
+    position:relative;
+    top:5px;
+  }
+  
+  ul li a:hover,ul li a:focus{
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.15);
+    position:relative;
+    z-index:5;
+  }
+  
+   
+  /*----end of card style------- */
+
+/* Styling all the labels of the form*/
+input {
+    border-radius: 20px !important;
+    border: none !important;
+}
+
+.form-control{
+    border-radius: 20px !important;
+    border: none !important;
+}
+
+.form-select{
+    border-radius: 20px !important;
+    border: none !important;
+}
+
+/* formating ALL buttons */
+.btn {
+    border-radius: 20px !important;
+    border-color: none;
+    font-weight: bold;
+    font-family: 'Reenie Beanie';
+
+    margin: auto;
+    text-align: justify;
+}
+   
+.btn-warning{
+    font-family:unset;
+    font-weight: normal;
+    
+}
+
+.btn-outline-success{
+    height: 60px;
+    width: 62px;
+    border-radius: 10px !important;
+    text-align: center;
+      
+}
+
+.btn-outline-danger{
+    height:60px;
+    width: 62px;
+    border-radius: 10px !important;
+    text-align: center;
+}
+
+
+
+
+/* Task list text (Form)*/
+h1 {
+    font-family: 'Reenie Beanie';
+    font-size: 60px !important;
+    font-style:inherit;
+    font-stretch: extra-expanded !important;
+    font-weight:bolder !important;
+    color: #2d36acc5;   
+
+}
+
+label{
+    font-weight: bolder;
+    color: #2d36acc5 ;
+}
+
+
+/*Display cards labels */
+.card-title{
+    font-family: 'Reenie Beanie';
+    font-stretch: extra-expanded !important;
+    font-size: 35px;
+    font-weight:bold; 
+    color:#2d36acc5;
+}
+h6{
+    font-weight:bold;
+    color: #2d36acc5;
+    
+}
+.strong{
+    /*font-family:initial;*/
+    color: rgba(20, 20, 20, 0.787);
+}
+
+.list-group{
+    /*border-radius: 20px;*/
+    background-color: none;
+    padding: 10px;
+    border:none;
+}
+
+.card-text{
+    color:initial;
+    font-family:inherit;
+}
+
+.card-body{
+    padding: 0.5mm;
+    border-radius: 0.3rem;
+}
+

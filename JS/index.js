@@ -1,8 +1,9 @@
-const newTaskButton = document.querySelector("#newTask");
+//Reset option with "New Task" button
+const NewTask = document.querySelector("#newTask");
 
-newTaskButton.addEventListener('click', newTaskToggler);
+NewTask.addEventListener('click', newTask);
 
-function newTaskToggler(){
+function newTask(){
     document.querySelector("#taskForm").reset();
     validationName.style.display = "none"
     validationDescription.style.display = "none";
@@ -15,6 +16,8 @@ function newTaskToggler(){
     validationDueDate.innerHTML = "none";
     validationStatus.innerHTML = "none";
 };
+
+//Validation of the form
 
 const taskManager = new TaskManager(0);
 // Testing the TaskManager class
@@ -226,7 +229,7 @@ taskList.addEventListener("click", (event) =>{
         const task = taskManager.getTaskById(taskId);
         //console.log(task);
         task.status = "Done";
-
+                  
         taskManager.render();
         //Saving the data in the localSorage
         taskManager.save();
@@ -241,4 +244,7 @@ taskList.addEventListener("click", (event) =>{
         //Saving the data in the localSorage
         taskManager.save();
     }
+
+    
+    
 });
